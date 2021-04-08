@@ -25,9 +25,9 @@
 
                             <div class="col-md-5 center-item">
                                 <div class="input-group number-spinner">
-                                    <button class="btn btn-default" id="minusBtn"><i class="fas fa-minus"></i></button>
+                                    <button class="btn btn-default" onclick="productPrice(false);"><i class="fas fa-minus"></i></button>
                                     <input type="text" class="form-control text-center" value="1" id="InputValue">
-                                    <button class="btn btn-default" id="plusBtn"><i class="fas fa-plus"></i></button>
+                                    <button class="btn btn-default" onclick="productPrice(true);"><i class="fas fa-plus"></i></button>
                                 </div>
                                 <h5>$ <span id="mobilePrice">1219</span></h5>
                                 <img src="images/remove.png" alt="" class="remove-item">
@@ -43,12 +43,12 @@
                             </div>
                             <div class="col-md-5 center-item">
                                 <div class="input-group number-spinner">
-                                    <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                                    <input type="text" class="form-control text-center" value="1">
-                                    <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                                    <button class="btn btn-default" onclick="caseInputPrice(false);"><i class="fas fa-minus"></i></button>
+                                    <input type="text" class="form-control text-center" value="1" id="case-input">
+                                    <button class="btn btn-default" onclick="caseInputPrice(true);"><i class="fas fa-plus"></i></button>
 
                                 </div>
-                                <h5>$59</h5>
+                                <h5>$<span id="casePrice">59</span></h5>
                                 <img src="images/remove.png" alt="" class="remove-item">
                             </div>
                         </div>
@@ -64,9 +64,9 @@
                             </div>
 
                             <div class="col-md-4 status">
-                                <h5>$1,278</h5>
-                                <h5>$0</h5>
-                                <h5>$1,278</h5>
+                                <h5 id="subtotalValue">$1,278</h5>
+                                <h5 id="tax">$0</h5>
+                                <h5 id="totalAmount">$1,278</h5>
                             </div>
                         </div>
                     </div>

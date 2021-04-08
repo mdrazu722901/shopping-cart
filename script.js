@@ -1,28 +1,35 @@
-const plusButton = document.getElementById("plusBtn");
-plusButton.addEventListener("click", function() {
-        productPrice(1);
+function productPrice(PhoneIncrease) {
 
-    })
-    // =================================MobilePriceWork==============================================//
-const minusButton = document.getElementById("minusBtn");
-minusButton.addEventListener("click", function() {
-
-    productPrice(-1);
-
-})
-
-function productPrice(addProduct) {
     const inputValue = document.getElementById("InputValue").value;
     const inputNumber = parseInt(inputValue);
-
-    const addValue = inputNumber + addProduct;
-    document.getElementById("InputValue").value = addValue;
-
-    const mobilePrice = document.getElementById("mobilePrice").innerText;
-    const mobilePriceNumber = parseFloat(mobilePrice);
-    const totalPrice = addValue * 1219;
+    let newInput = inputNumber;
+    if (PhoneIncrease == true) {
+        newInput = inputNumber + 1;
+    }
+    if (PhoneIncrease == false && newInput > 0) {
+        newInput = inputNumber - 1;
+    }
+    document.getElementById("InputValue").value = newInput;
+    const totalPrice = newInput * 1219;
     document.getElementById("mobilePrice").innerText = totalPrice;
 
-}
+};
+// // ===============================================CasePriceWork=========================================//
 
-// ===============================================CasePriceWork=========================================//
+function caseInputPrice(addInputNumber) {
+    const caseInput = document.getElementById("case-input").value;
+    const caseInputNumber = parseInt(caseInput);
+
+    let newCase = caseInputNumber;
+    if (addInputNumber == true) {
+        newCase = caseInputNumber + 1;
+    }
+    if (addInputNumber == false && newCase > 0) {
+        newCase = caseInputNumber - 1;
+    }
+    document.getElementById("case-input").value = newCase;
+
+    const newPrice = newCase * 59;
+
+    document.getElementById("casePrice").innerText = newPrice;
+};
