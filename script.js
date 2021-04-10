@@ -1,7 +1,7 @@
 function productPrice(PhoneIncrease) {
-
-    const inputValue = document.getElementById("InputValue").value;
-    const inputNumber = parseInt(inputValue);
+    // const inputValue = document.getElementById("InputValue").value;
+    // const inputNumber = parseInt(inputValue);
+    const inputNumber = getInputValue("InputValue");
     let newInput = inputNumber;
     if (PhoneIncrease == true) {
         newInput = inputNumber + 1;
@@ -18,8 +18,9 @@ function productPrice(PhoneIncrease) {
 // // ===============================================CasePriceWork=========================================//
 
 function caseInputPrice(addInputNumber) {
-    const caseInput = document.getElementById("case-input").value;
-    const caseInputNumber = parseInt(caseInput);
+    // const caseInput = document.getElementById("case-input").value;
+    // const caseInputNumber = parseInt(caseInput);
+    const caseInputNumber = getInputValue("case-input");
 
     let newCase = caseInputNumber;
     if (addInputNumber == true) {
@@ -44,6 +45,11 @@ function subtotalAmount() {
     const subtotal = phoneInput * 1219 + caseInput * 59;
     document.getElementById("subtotalValue").innerText = '$' + subtotal;
 
+    const tex = subtotal * 0.1;
+    document.getElementById("tax").innerText = "$" + tex;
+
+    const totalAmount = tex + subtotal;
+    document.getElementById("totalAmount").innerText = "$" + totalAmount;
 }
 
 function getInputValue(product) {
